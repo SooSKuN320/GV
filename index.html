@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GV学力テスト</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section id="start" class="card start-card">
+      <div class="badge">GV一般受験版</div>
+      <h1>GV学力テスト</h1>
+      <p class="lead">国語・理科・英語の全15問。回答後に点数と称号が出ます。</p>
+      <label class="name-label" for="nickname">名前 / ニックネーム</label>
+      <input id="nickname" class="name-input" maxlength="24" placeholder="例：そーす" />
+      <div class="notice"><strong>注意</strong><p>自由記述問題は自動採点しにくいため、このWeb版では選択式に置き換えています。</p></div>
+      <button id="startBtn" class="primary-btn">テスト開始</button>
+    </section>
+    <section id="quiz" class="card quiz-card hidden">
+      <div class="quiz-top"><div><p id="subject" class="subject">国語</p><h2 id="questionTitle">問題文</h2></div><div class="progress"><span id="qIndex">1</span>/<span id="qTotal">15</span></div></div>
+      <p id="questionSub" class="question-sub"></p>
+      <div id="options" class="options"></div>
+      <div class="quiz-actions"><button id="prevBtn" class="ghost-btn">戻る</button><button id="nextBtn" class="primary-btn">次へ</button></div>
+    </section>
+    <section id="result" class="card result-card hidden">
+      <div class="badge">結果発表</div>
+      <h1 id="resultTitle">あなたの結果</h1>
+      <div class="score-box"><p class="score"><span id="score">0</span><small>/150点</small></p><p id="rank" class="rank">称号</p></div>
+      <div id="breakdown" class="breakdown"></div>
+      <div class="result-actions"><button id="shareBtn" class="primary-btn">Xにポストする</button><button id="retryBtn" class="ghost-btn">もう一回やる</button></div>
+      <details class="answers"><summary>答えを見る</summary><div id="answerList"></div></details>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
